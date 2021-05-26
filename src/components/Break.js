@@ -1,6 +1,7 @@
 import React from 'react';
 
 function BreakInterval(props) {
+
     function decreaseCounter() {
         if(props.breakInterval === 1) {
             return;
@@ -19,9 +20,9 @@ function BreakInterval(props) {
         <section>
             <h4> break duration</h4>
             <section className="interval-container">
-                <button onClick={decreaseCounter}>-</button>
+                <button disabled={props.isPlay === true ? "disabled" : ""} onClick={decreaseCounter}>-</button>
                 <p className="interval-length">{props.breakInterval}</p>
-                <button onClick={increaseCounter}>+</button>
+                <button disabled={props.isPlay === true ? "disabled" : ""} onClick={increaseCounter}>+</button>
             </section>
         </section>
     )
